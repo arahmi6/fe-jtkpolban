@@ -10,8 +10,6 @@
           v-for="album in albums"
           :key="album"
         >
-
-          <!-- <h3>{{album.album_name}}</h3> -->
           
           <span>{{album.album_title}}</span>
           

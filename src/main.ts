@@ -2,7 +2,7 @@ import Vue from "vue";
 import "./registerServiceWorker";
 import router from "./router";
 import vuetify from "./plugins/vuetify";
-import "@/assets/tailwind.css";
+// import "@/assets/tailwind.css";
 import CountryFlag from "vue-country-flag";
 import App from "./App.vue";
 
