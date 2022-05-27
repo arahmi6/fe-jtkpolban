@@ -8,8 +8,8 @@
       <v-col class="" cols="9"><Berita></Berita></v-col>
       <v-col class=""><Agenda></Agenda></v-col>
     </v-row>
-    <v-row>
-      <!-- <Prestasi></Prestasi> -->
+    <v-row class="ma-0">
+      <Prestasi></Prestasi>
     </v-row>
     <Footer></Footer>
   </div>
@@ -20,7 +20,7 @@ import Header from './../components/Header.vue'
 import Banner from './../components/Banner.vue'
 import Berita from './../components/beranda/BeritaPanel.vue'
 import Agenda from './../components/beranda/AgendaPanel.vue'
-// import Prestasi from './../components/beranda/PrestasiPanel.vue'
+import Prestasi from './../components/beranda/PrestasiPanel.vue'
 import Footer from './../components/Footer.vue'
 
 export default {
@@ -30,7 +30,7 @@ export default {
     Banner,
     Berita,
     Agenda,
-    // Prestasi,
+    Prestasi,
     Footer
   }
 }
