@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4">
+  <div>
     <v-card flat>
       <p></p>
       <v-row>
@@ -14,10 +14,10 @@
         </v-col>
         <v-col cols="9"></v-col>
       </v-row>
-      <v-row class="my-1"><AgendaCard></AgendaCard></v-row>
-      <v-row class="my-1"><AgendaCard></AgendaCard></v-row>
-      <v-row class="my-1"><AgendaCard></AgendaCard></v-row>
-      <v-row class="my-1"><AgendaCard></AgendaCard></v-row>
+      <v-row class="ma-0"><AgendaCard></AgendaCard></v-row>
+      <v-row class="ma-0 mt-1"><AgendaCard></AgendaCard></v-row>
+      <v-row class="ma-0 mt-1"><AgendaCard></AgendaCard></v-row>
+      <v-row class="ma-0 mt-1"><AgendaCard></AgendaCard></v-row>
     </v-card>
   </div>
 </template>
