@@ -1,9 +1,8 @@
 <template>
-  <v-banner>
-    <v-img 
+  <v-banner class="px-0 ml-0 mt-n1 ml-n2">
+    <v-img
       v-bind:src="require('@/assets/class.jpeg')"      
       max-height="500px"
-      max-width="100%"
     ></v-img>
   </v-banner>
 </template>
