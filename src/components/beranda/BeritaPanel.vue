@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card flat>
+    <v-card flat class="my-5">
       <p></p>
       <v-row>
         <v-col>

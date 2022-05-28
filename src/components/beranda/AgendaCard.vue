@@ -3,6 +3,7 @@
     width="90%"
     class="mx-3"
     flat
+    link
   >
     <v-row dense>
       <v-col cols="3" class="mx-0">
@@ -20,7 +21,7 @@
       <v-col>
         <v-card flat>
           <p class="my-0"><strong>PPKK Polban</strong></p>
-          <p><v-icon color="red">mdi-map-marker</v-icon>Gedung Pendopo Polban</p>
+          <p class="my-0"><v-icon color="red">mdi-map-marker</v-icon>Gedung Pendopo Polban</p>
         </v-card>
       </v-col>
         
