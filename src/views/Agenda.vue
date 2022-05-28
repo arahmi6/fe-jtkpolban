@@ -15,9 +15,9 @@
                           <v-card class="mt-3 ml-3 mr-3" >
                             <v-row class="mt-1 mb-1 agenda-card">
                               <v-col cols="auto" id="tanggal">
-                                <p>{{ item.tanggal }}</p>
+                                <!-- <p>{{ item.tanggal }}</p>
                                 <p>{{ item.bulan }}</p>
-                                <p>{{ item.tahun }}</p>
+                                <p>{{ item.tahun }}</p> -->
                               </v-col>
 
                               <v-col cols="auto">
@@ -25,18 +25,18 @@
                               </v-col>
                                 
                               <v-col >
-                                <p id="nama-acara">{{ item.nama_agenda }}</p>
+                                <p id="nama-acara">{{ item.Name }}</p>
                                 
                                 <v-row>
                                   <v-col cols="auto">
                                     <v-icon id="map-marker">mdi-map-marker</v-icon>
                                   </v-col>
                                   <v-col>
-                                    <p id="nama-lokasi">{{ item.lokasi }}</p>
+                                    <p id="nama-lokasi">{{ item.Location }}</p>
                                   </v-col>
                                 </v-row>
                                 
-                                <p >{{ item.deskripsi }}</p>
+                                <p >{{ item.Description }}</p>
                               </v-col>
 
                             </v-row>
@@ -56,6 +56,7 @@
 /* eslint-disable */
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import http from "./../http.js";
 
 export default {
   name: 'App',
@@ -66,37 +67,43 @@ export default {
   data: () => ({
   
       agendas: [
-        {nama_agenda: "Agenda 1",
-         tanggal : "10",
-         bulan : "APR",
-         tahun : "2022",
-         lokasi : "Politeknik Negeri Bandung",
-         deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
-        },
-        {nama_agenda: "Agenda 2",
-         tanggal : "10",
-         bulan : "APR",
-         tahun : "2022",
-         lokasi : "Politeknik Negeri Bandung",
-         deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
-        },
-        {nama_agenda: "Agenda 3",
-         tanggal : "10",
-         bulan : "APR",
-         tahun : "2022",
-         lokasi : "Politeknik Negeri Bandung",
-         deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
-        },
-        {nama_agenda: "Agenda 4",
-         tanggal : "10",
-         bulan : "APR",
-         tahun : "2022",
-         lokasi : "Politeknik Negeri Bandung",
-         deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
-        },
+        // {nama_agenda: "Agenda 1",
+        //  tanggal : "10",
+        //  bulan : "APR",
+        //  tahun : "2022",
+        //  lokasi : "Politeknik Negeri Bandung",
+        //  deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
+        // },
+        // {nama_agenda: "Agenda 2",
+        //  tanggal : "10",
+        //  bulan : "APR",
+        //  tahun : "2022",
+        //  lokasi : "Politeknik Negeri Bandung",
+        //  deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
+        // },
+        // {nama_agenda: "Agenda 3",
+        //  tanggal : "10",
+        //  bulan : "APR",
+        //  tahun : "2022",
+        //  lokasi : "Politeknik Negeri Bandung",
+        //  deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
+        // },
+        // {nama_agenda: "Agenda 4",
+        //  tanggal : "10",
+        //  bulan : "APR",
+        //  tahun : "2022",
+        //  lokasi : "Politeknik Negeri Bandung",
+        //  deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
+        // },
       ],
     }),
-  
+
+    mounted() {
+    const url = "/agendas" ;
+    http.get(url).then(response => {
+      this.agendas = response.data;
+    });
+    }
 }
 </script>
 

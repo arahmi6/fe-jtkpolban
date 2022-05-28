@@ -122,6 +122,7 @@ export default {
           {
             id: 101,
             name: 'Jurusan Teknik Komputer dan Informatika',
+            to: 'profile-detail/jurusan'
           },
           {
             id: 102,
@@ -129,11 +130,13 @@ export default {
             children: [
               {
                 id: 1021,
-                name: 'D3 Teknik Informatika'
+                name: 'D3 Teknik Informatika',
+                to: 'profile-detail/d3-ti'
               },
               {
                 id: 1022,
-                name:'D4 Teknik Informatika'
+                name:'D4 Teknik Informatika',
+                to: 'profile-detail/d4-ti'
               }
             ]
           }
