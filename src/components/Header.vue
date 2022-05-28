@@ -33,13 +33,13 @@
               </v-icon>
               </v-btn>
             </template>
-            <v-treeview :items="items_about">
-            
-              <template slot="label" slot-scope="props" >
-                  <router-link :to="props.item.to" v-if="props.item.to">{{ props.item.name }}</router-link>
+            <v-treeview :items="items_about" class="treeview-menu rounded-0">
+              <template slot="label" slot-scope="props">
+                <div class="treeview-item-text" >
+                  <router-link class="treeview-item-text" :to="props.item.to" v-if="props.item.to">{{ props.item.name }}</router-link>
                   <span v-else>{{ props.item.name }}</span>
+                </div>
               </template>
-            
             </v-treeview>
           </v-menu>
         </v-app>
@@ -81,11 +81,12 @@
               </v-icon>
               </v-btn>
             </template>
-            <v-treeview :items="items_other">
-            
-              <template slot="label" slot-scope="props" >
-                  <router-link :to="props.item.to" v-if="props.item.to">{{ props.item.name }}</router-link>
+            <v-treeview :items="items_other" class="treeview-menu">
+              <template slot="label" slot-scope="props">
+                <div class="treeview-item-text">
+                  <router-link class="treeview-item-text" :to="props.item.to" v-if="props.item.to">{{ props.item.name }}</router-link>
                   <span v-else>{{ props.item.name }}</span>
+                </div>
               </template>
             
             </v-treeview>
@@ -96,6 +97,7 @@
       <v-col></v-col>
       <v-col></v-col>
       <v-text-field
+        flat
         class="rounded-0 mt-4"
         solo
         dark
@@ -195,4 +197,27 @@ export default {
     border-bottom: 7px solid #19396C;
   }
 
+  .treeview-menu {
+    background:rgba(255, 255, 255, 0.437);
+    backdrop-filter: blur(4px);
+  }
+
+  .treeview-item-text {
+    text-decoration: none;
+    color: white !important;
+  }
+
+  .v-treeview-node__root:hover {
+    background: #2A5697;
+  }
+
+  .v-treeview-node__root {
+    background: #19396C;
+    margin-top: 3px;
+    padding-left: 0% !important;
+  }
+
+  .v-treeview-node__toggle {
+    color: white !important;
+  }
 </style>
