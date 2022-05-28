@@ -7,13 +7,13 @@
                 
                     <v-list class="mt-3 ml-3 mr-3">
                        <v-list-item
-                            class="mt-2"
+                            class="mt-2 "
                             v-for="item in agendas"
                             :key="item"
                             link
                         >
                           <v-card class="mt-3 ml-3 mr-3" >
-                            <v-row class="mt-1 mb-1">
+                            <v-row class="mt-1 mb-1 agenda-card">
                               <v-col cols="auto" id="tanggal">
                                 <p>{{ item.tanggal }}</p>
                                 <p>{{ item.bulan }}</p>
@@ -36,7 +36,7 @@
                                   </v-col>
                                 </v-row>
                                 
-                                <p>{{ item.deskripsi }}</p>
+                                <p >{{ item.deskripsi }}</p>
                               </v-col>
 
                             </v-row>
@@ -124,7 +124,7 @@ h1{
 
 #tanggal{
   font-size: 230%;
-  font-weight: bold;
+  font-weight: 4000;
   color: #E5842D;
   text-align: center;
   padding-left: 3%;
@@ -144,5 +144,10 @@ h1{
 
 #map-marker{
   color: #FF3D00;
+}
+
+.agenda-card{ 
+  padding-left: 2%;
+  padding-right: 4%;
 }
 </style>

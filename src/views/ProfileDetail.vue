@@ -12,20 +12,20 @@
       </v-col>
 
       <v-col class="auto">
-        <h1>{{judul}}</h1>
-        <p id="tanggal">{{tanggal}}</p>
+        <p id="judul-profile">{{judul}}</p>
+        <p id="tanggal-profile">{{tanggal}}</p>
 
   
         <v-container >
           <v-img 
-            class="image"
+            id="image-profile"
             v-bind:src="require('@/assets/kelas_ai.png')"      
             width="50%"
             max-height="100%"
             float="left"
           ></v-img>
 
-          <p >   
+          <p id="description">   
             Jurusan Teknik Komputer dan Informatika Politeknik Negeri Bandung (lebih dikenal dengan singkatan JTK) merupakan jurusan penyelenggara pendidikan diploma bidang teknologi informasi pertama di Indonesia. Jurusan ini telah menyelenggarakan pendidikan D-3 bidang teknik komputer dan informatika sejak 1977 dan pendidikan D-4 sejak 2009.
             Dengan daya tampung sekitar 96 mahasiswa per tahun, sampai saat ini JTK telah menghasilkan lebih dari 2.500 alumni yang bekerja pada berbagai sektor industri, baik di dalam maupun di luar negeri.
             Selain menjalankan pendidikan, JTK juga menyelenggarakan penelitian dan pengabdian kepada masyarakat dalam bidang teknologi informasi. Sebagai jurusan pertama yang menyelenggarakan pendidikan profesional bidang teknologi informasi, JTK selalu dijadikan tolok ukur dan telah banyak memberikan bantuan teknis dan non-teknis kepada institusi lain maupun kepada masyarakat umum. Beberapa aktivitas yang sering dilakukan di antaranya adalah pembinaan institusi, pelatihan bidang TI, konsultasi pemanfaatan TI untuk menunjang kegiatan kerja, pengembangan sistem informasi, dan lab/bengkel komputer layanan masyarakat.
@@ -81,8 +81,13 @@ export default {
   padding: 0;
 }
 
-h1{ 
+#judul, #tanggal-profile{ 
   text-align: left;
+}
+
+#judul-profile{
+  font-size: 200%;
+  font-weight: 500;
 }
 
 .content{ 
@@ -91,28 +96,22 @@ h1{
   margin-right: 8%;
 }
 
-#tanggal{ 
+#tanggal-profile{ 
+  font-size: 100%;
   font-weight: bolder;
+  color: #E5842D;
 }
 
-p{
-  font-weight: lighter;
+#description{
   text-align: justify;
 }
 
-/* .description-box{ 
-  display: flex;
-} */
-
-/* .container {
-    float:left;
-    position: relative;
-    width: 100%;
-    display: inline-block;
-} */
-
-/* .description .image {
-  display: inline-block;
-} */
+#image-profile{ 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+  width: 50%;
+}
 
 </style>

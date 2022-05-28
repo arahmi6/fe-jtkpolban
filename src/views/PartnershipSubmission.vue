@@ -23,14 +23,15 @@
 
            <v-row>
             <v-col cols="4">
-              <p
+              <p class="font-weight-bold"
               >Data PIC Mitra</p>
             </v-col>
           </v-row>
 
            <v-row>
             <v-col cols="4">
-              <p>Nama</p>
+              <p class="sub-data-pic"
+              >Nama</p>
             </v-col>
             <v-col
               cols="12"
@@ -47,7 +48,8 @@
 
            <v-row>
             <v-col cols="4">
-              <p>Nomor Telepon</p>
+              <p class="sub-data-pic"
+              >Nomor Telepon</p>
             </v-col>
             <v-col
               cols="12"
@@ -64,7 +66,8 @@
 
            <v-row>
             <v-col cols="4">
-              <p>Email</p>
+              <p class="sub-data-pic"
+              >Email</p>
             </v-col>
             <v-col
               cols="12"
@@ -82,7 +85,8 @@
 
            <v-row>
             <v-col cols="4">
-              <p>Lingkup Kerja Sama</p>
+              <p class="sub-data-pic"
+              >Lingkup Kerja Sama</p>
             </v-col>
             <v-col
               cols="12"
@@ -100,7 +104,8 @@
 
            <v-row>
             <v-col cols="4">
-              <p>Rencana Kegiatan</p>
+              <p class="sub-data-pic"
+              >Rencana Kegiatan</p>
             </v-col>
             <v-col
               cols="12"
@@ -118,7 +123,8 @@
 
            <v-row>
             <v-col cols="4">
-              <p>Surat Permohonan Kerjsama</p>
+              <p class="sub-data-pic"
+              >Surat Permohonan Kerjsama</p>
             </v-col>
             <v-col
               cols="12"
@@ -142,7 +148,7 @@
               <v-btn
                 @click = submitAction
                 dark
-                class="rounded-0 ml-4"
+                class="rounded-0 ml-4 btn-kirim"
                 color="#19396C"
               >Kirim</v-btn>
         </v-col>
@@ -191,6 +197,11 @@ h2{
   margin-top: 4%;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.sub-data-pic{ 
+  margin-left: 15%;
+  font-weight: 400;
 }
 
 </style>

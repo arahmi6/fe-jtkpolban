@@ -1,8 +1,8 @@
 <template>
-    <div class="expansion-panel">
+    <div class="about-panel">
         <v-row>
            <v-col cols="auto">
-               <v-card class="mt-3 ml-3" width="300">
+               <v-card class="mt-3 ml-3" width="340">
                     <v-list>
 
                     <v-list-group
@@ -74,10 +74,6 @@
 </script>
 
 <style>
-* {
-  color: #19396C;
-  font-weight: bold;
-}
 
 .verticalLine {
     border-left: 8px solid #E5842D;
@@ -87,4 +83,6 @@
 .expansion-panel{
   margin: 3%;
 }
+
+
 </style>

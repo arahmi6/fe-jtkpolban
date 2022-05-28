@@ -11,7 +11,7 @@
           :key="album"
         >
           
-          <span>{{album.album_title}}</span>
+          <span id="album-name">{{album.album_name}}</span>
           
           <v-carousel
             :show-arrows="false"
@@ -120,9 +120,10 @@ h1{
   margin-right: 7%;
 }
 
-.album-title{ 
-  width: 100%;
-  position:absolute;
+#album-name{ 
+  font-size: 200%;
+  font-weight: 500;
+  /* position:absolute; */
 }
 
 </style>

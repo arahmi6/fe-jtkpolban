@@ -1,5 +1,5 @@
   <template>
-  <div id="app">
+  <div id="footer">
     <v-footer
       dark
       padless
@@ -110,3 +110,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+#footer{ 
+  margin-top: 4%;
+}
+</style>
