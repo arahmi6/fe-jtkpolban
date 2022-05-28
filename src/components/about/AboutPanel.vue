@@ -12,7 +12,7 @@
                         <v-list-item-title>Profil</v-list-item-title>
                         </template>
 
-                        <v-list-item link>
+                        <v-list-item link @click="$router.push('/profile-jurusan')">
                             <v-list-item-title>Jurusan Teknik Komputer dan Informatika</v-list-item-title>
                         </v-list-item>
 
@@ -27,9 +27,10 @@
                         </template>
 
                         <v-list-item
-                            v-for="([title, icon], i) in cruds"
+                            v-for="([title, route], i) in cruds"
                             :key="i"
                             link
+                            @click="$router.push(route)"
                         >
                             <v-list-item-title v-text="title"></v-list-item-title>
 
@@ -66,8 +67,9 @@
   export default {
     data: () => ({
       cruds: [
-        ['D3 Teknik Informatika'],
-        ['D4 Teknik Informatika'],
+        ['D3 Teknik Informatika', 'profile-d3'],
+        ['D4 Teknik Informatika', 'profile-d4'],
+
       ],
     }),
   }

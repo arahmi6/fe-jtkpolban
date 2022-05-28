@@ -65,7 +65,7 @@
           <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
               <v-btn
-                id="tentang"
+                id="lainnya"
                 text
                 color="#19396C"
                 v-bind="attrs"
@@ -122,7 +122,7 @@ export default {
           {
             id: 101,
             name: 'Jurusan Teknik Komputer dan Informatika',
-            to: 'profile-detail/jurusan'
+            to: '/profile-jurusan'
           },
           {
             id: 102,
@@ -131,12 +131,12 @@ export default {
               {
                 id: 1021,
                 name: 'D3 Teknik Informatika',
-                to: 'profile-detail/d3-ti'
+                to: '/profile-d3'
               },
               {
                 id: 1022,
                 name:'D4 Teknik Informatika',
-                to: 'profile-detail/d4-ti'
+                to: '/profile-d4'
               }
             ]
           }
