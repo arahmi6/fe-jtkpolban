@@ -202,6 +202,10 @@ export default {
     backdrop-filter: blur(4px);
   }
 
+  .v-menu__content {
+    border-radius: 0px !important;
+  }
+
   .treeview-item-text {
     text-decoration: none;
     color: white !important;
