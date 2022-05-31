@@ -7,9 +7,12 @@ import GalleryDetail from './../views/GalleryDetail.vue'
 import ProfileJurusan from './../views/ProfileJurusan.vue'
 import ProfileD3 from './../views/ProfileD3.vue'
 import ProfileD4 from './../views/ProfileD4.vue'
-import InfoKerjaSama from './../views/InfoKerjaSama.vue'
+/**import InfoKerjaSama from './../views/InfoKerjaSama.vue'**/
 import Kurikulum from './../views/Kurikulum.vue'
 import SaranaPrasarana from './../views/SaranaPrasarana.vue'
+import BeritaDetail from './../views/BeritaDetail.vue'
+import PrestasiDetail from './../views/PrestasiDetail.vue'
+import Galeri from './../views/GaleriPortal.vue'
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -48,11 +51,11 @@ const routes: Array<RouteConfig> = [
     name: "Profile D4 Teknik Informatika",
     component: ProfileD4,
   },
-  {
+  /**{
     path: "/infokerjasama",
     name: "Info Kerja Sama",
     component: InfoKerjaSama,
-  },
+  },**/
   {
     path: "/kurikulum",
     name: "Kurikulum",
@@ -63,6 +66,21 @@ const routes: Array<RouteConfig> = [
     name: "Sarana dan Prasarana",
     component: SaranaPrasarana,
   },
+  {
+    path: "/berita-detail",
+    name: "Detail Berita",
+    component: BeritaDetail,
+  },
+  {
+    path: "/prestasi-detail",
+    name: "Detail Prestasi",
+    component: PrestasiDetail,
+  },
+  {
+    path: "/galeri",
+    name: "Galeri",
+    component: Galeri,
+  }
 ];
 
 const router = new VueRouter({
