@@ -32,7 +32,7 @@
             >
               <v-row
                 class="fill-height"
-                align="center"
+                allign="center"
                 justify="center"
               >
               </v-row>
