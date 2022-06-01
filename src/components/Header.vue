@@ -96,7 +96,7 @@
       </v-toolbar-items>
       <v-col></v-col>
       <v-col></v-col>
-      <v-text-field
+      <!-- <v-text-field
         flat
         class="rounded-0 mt-4"
         solo
@@ -104,7 +104,7 @@
         placeholder="Cari..."
         append-icon="mdi-magnify"
         background-color="#19396C"
-      ></v-text-field>
+      ></v-text-field> -->
       
       <v-col></v-col>
     </v-toolbar>
