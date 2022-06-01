@@ -1,29 +1,23 @@
 <template>
     <div>
-        <!-- <v-row
-        class="mb-6"
-        no-gutters
-        v-for=" n in this.partners.length/4"
-        :key="n"
-        > -->
+        <v-row>
         <v-col
+            cols="3"
             v-for="item in this.partners"
             :key="item"
-            cols="12"
-            sm="8"
         >
-        <a :href="item.LinkToPartnerSite">
-            <v-img 
-                id="image-partnership-info"
-                :src="item.PartnerLogo.url"
-                :alt="item.PartnerLogo.alternativeText"     
-                width="20%"
-                max-height="10%"
-                float="left"
-            ></v-img>
-        </a>
+        <v-card id="partner-list">
+            <a :href="item.LinkToPartnerSite">
+                <v-img 
+                    id="image-partnership-info"
+                    :src="item.PartnerLogo.url"
+                    :alt="item.PartnerLogo.alternativeText"     
+                    float="left"
+                ></v-img>
+            </a>
+        </v-card>
         </v-col>
-        <!-- </v-row> -->
+        </v-row>
     </div>
 </template>
 
@@ -52,5 +46,19 @@ export default {
 </script>
 
 <style>
+#partner-list{ 
+    padding: 2%;
+    width: 65%; 
+    margin: 2%;
+    height: fit-content;
+    align-items: center;
+    
+}
+
+#image-partnership-info{ 
+    max-height: 100px;
+    width: auto;
+    height: 30%;
+}
 
 </style>

@@ -33,7 +33,7 @@ const routes: Array<RouteConfig> = [
     component: PartnershipSubmission,
   },
   {
-    path: "/gallery-detail",
+    path: "/gallery-detail/:id",
     name: "Gallery Detail",
     component: GalleryDetail,
   },

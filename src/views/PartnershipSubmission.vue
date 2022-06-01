@@ -102,7 +102,7 @@
                 solo
                 name="input-7-4"
                 label="Lingkup kerjasama antara mitra dengan JTK"
-                v-model="ScopeofCoorperation"
+                v-model="ScopeOfCoorperation"
               ></v-textarea>
             </v-col>
           </v-row>
@@ -191,8 +191,6 @@ export default {
   }),
   methods: {
     submitAction(){
-      alert("halo");
-      alert(this.PIC_Name)
       let formData = {
         PartnerName: this.PartnerName ,
         PIC_Name: this.PIC_Name,
@@ -200,28 +198,32 @@ export default {
         PIC_Email: this.PIC_Email,
         ScopeOfCoorperation: this.ScopeOfCoorperation,
         Plan: this.Plan,
-        FileSubmission: this.FileSubmission,
+        // FileSubmission: this.FileSubmission,
       };
       const jsonData = JSON.stringify(formData);
-      alert("halo 2");
       const url = "/partner-submissions";
+      alert(formData.PartnerName);
       http
         .post(url, formData)
         .then((response) => {
-          alert("halo 3");
+          alert("Pengajuan Kerjasama berhasil dikirim, kami akan menghubungi anda untuk info lebih lanjut");
         })
         .catch((error) => {
           alert("Failed \n" + error);
         });
       
+      clear();
+      
+    },
+    clear(){
       this.PartnerName= "" ;
       this.PIC_Name= "" ;
       this.PIC_PhoneNumber= "" ;
       this.PIC_Email= "" ;
       this.ScopeOfCoorperation= "" ;
       this.Plan= "" ;
-      
     }
+
 
     }
   }

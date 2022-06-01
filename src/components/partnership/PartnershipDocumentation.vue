@@ -1,6 +1,7 @@
 <template>
     <div>
         <v-carousel
+                class="docs"
                 :show-arrows="false"
             >
                 <v-carousel-item 
