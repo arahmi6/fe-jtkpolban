@@ -13,6 +13,7 @@ import SaranaPrasarana from './../views/SaranaPrasarana.vue'
 import BeritaDetail from './../views/BeritaDetail.vue'
 import PrestasiDetail from './../views/PrestasiDetail.vue'
 import Galeri from './../views/GaleriPortal.vue'
+import ProfilPegawai from './../views/ProfilPegawai.vue'
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -80,6 +81,11 @@ const routes: Array<RouteConfig> = [
     path: "/galeri",
     name: "Galeri",
     component: Galeri,
+  },
+  {
+    path: "/profil-pegawai",
+    name: "Profil Pegawai",
+    component: ProfilPegawai,
   }
 ];
 
