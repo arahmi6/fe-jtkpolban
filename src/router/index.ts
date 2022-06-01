@@ -25,7 +25,7 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: "/partnership-submission",
-    name: "Partnership - Geowisata",
+    name: "Partnership",
     component: PartnershipSubmission,
   },
   {
@@ -49,7 +49,7 @@ const routes: Array<RouteConfig> = [
     component: ProfileD4,
   },
   {
-    path: "/partnerhip-info",
+    path: "/partnership-info",
     name: "Partnership Info",
     component: PartnershipInfo,
   },

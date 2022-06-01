@@ -174,12 +174,12 @@ export default {
       },
       {
         id: 4,
-        name: 'Kerja sama',
-        to:"/kerja-sama"
+        name: 'Info Kerjasama',
+        to:"/partnership-info"
       },
       {
         id: 5,
-        name: 'Pengajuan Kerja sama',
+        name: 'Pengajuan Kerjasama',
         to:"/partnership-submission"
       },
     ]

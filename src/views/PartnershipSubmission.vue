@@ -142,6 +142,7 @@
                   label="Upload file permohonan kerja sama"
                   outlined
                   dense
+                  v-model="FileSubmission"
                 ></v-file-input>
             </v-col>
           </v-row>
@@ -179,13 +180,14 @@ export default {
     Footer
   },
   data: () => ({
+    dialog: false,
     PartnerName: "" ,
     PIC_Name: "" ,
     PIC_PhoneNumber: "" ,
     PIC_Email: "" ,
     ScopeOfCoorperation: "" ,
     Plan: "" ,
-    // FileSubmission: ;
+    FileSubmission,
   }),
   methods: {
     submitAction(){
@@ -198,7 +200,7 @@ export default {
         PIC_Email: this.PIC_Email,
         ScopeOfCoorperation: this.ScopeOfCoorperation,
         Plan: this.Plan,
-        // FileSubmission: ;
+        FileSubmission: this.FileSubmission,
       };
       const jsonData = JSON.stringify(formData);
       alert("halo 2");
@@ -211,6 +213,14 @@ export default {
         .catch((error) => {
           alert("Failed \n" + error);
         });
+      
+      this.PartnerName= "" ;
+      this.PIC_Name= "" ;
+      this.PIC_PhoneNumber= "" ;
+      this.PIC_Email= "" ;
+      this.ScopeOfCoorperation= "" ;
+      this.Plan= "" ;
+      
     }
 
     }
