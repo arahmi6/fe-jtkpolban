@@ -52,11 +52,11 @@ const routes: Array<RouteConfig> = [
     name: "Profile D4 Teknik Informatika",
     component: ProfileD4,
   },
-  {
-    path: "/partnerhip-info",
-    name: "Partnership Info",
-    component: PartnershipInfo,
-  },
+  // {
+  //   path: "/partnerhip-info",
+  //   name: "Partnership Info",
+  //   component: PartnershipInfo,
+  // },
   {
     path: "/kurikulum",
     name: "Kurikulum",
