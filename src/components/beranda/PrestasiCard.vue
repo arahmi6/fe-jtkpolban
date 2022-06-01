@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div> -->
     <v-card
       flat
       link
@@ -15,5 +15,5 @@
       </v-card-text>
     
     </v-card>
-  </div>
+  <!-- </div> -->
 </template>
