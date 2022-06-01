@@ -11,16 +11,16 @@
           :key="album"
         >
           
-          <span id="album-name">{{album.album_name}}</span>
+          <span id="album-name">{{album.Name}}</span>
           
           <v-carousel
             :show-arrows="false"
           >
             <v-carousel-item 
               class="album"
-              v-for="(item,i) in album.items"
-              :key="i"
-              :src="item.src"
+              v-for="(item) in album.Medias"
+              :key="item"
+              :src="item.url"
               reverse-transition="fade-transition"
               transition="fade-transition"
             >
@@ -42,6 +42,7 @@
 /* eslint-disable */
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import http from "./../http.js";
 
 export default {
   name: 'App',
@@ -52,47 +53,28 @@ export default {
 
   data () {
       return {
-        gallery_name : "ACARA JTK",
-        albums:[
-          {
-            album_name: "Nama Album 1",
-            items: [
-              {
-                src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-              },
-              {
-                src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-              },
-              {
-                src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-              },
-              {
-                src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-              },
-            ],
-          },
-          {
-            album_name: "Nama Album 2",
-            items: [
-              {
-                src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-              },
-              {
-                src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-              },
-              {
-                src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-              },
-              {
-                src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-              },
-            ],
-          }
-
-        ]
-        
+        gallery_name : "",
+        albums:[],
       }
     },
+  mounted() {
+    const url = "/galleries/6292644335fe1124946d69ce" ;
+    let link = process.env.VUE_APP_CMS_API;
+    http.get(url).then(response => {
+      this.gallery_name = response.data.Name; 
+      this.albums = response.data.albums;
+      let albums_length = this.partners.length;
+      for(let i=0; i<albums_length; i++){
+        
+        for(let j=0; j<this.albums[i].Medias.length; j++){
+          this.albums[i].Medias[j].url = link.concat(this.albums[i].Medias[j].url);
+          alert("AAAAAAa");
+        }
+            
+            
+      }
+    });
+  }
 
  
 }

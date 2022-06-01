@@ -41,7 +41,7 @@
         </v-list-item>
 
         <v-list-item link>
-          <v-list-item-title>Sarana Prasarana</v-list-item-title>
+          <v-list-item-title link @click="$router.push('/sarana-prasarana')">Sarana Prasarana</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-card>

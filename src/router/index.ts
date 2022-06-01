@@ -2,11 +2,13 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import LandingPage from "../views/LandingPage.vue";
 import Agenda from './../views/Agenda.vue'
+import BeritaPortal from './../views/BeritaPortal.vue'
 import PartnershipSubmission from './../views/PartnershipSubmission.vue'
 import GalleryDetail from './../views/GalleryDetail.vue'
 import ProfileJurusan from './../views/ProfileJurusan.vue'
 import ProfileD3 from './../views/ProfileD3.vue'
 import ProfileD4 from './../views/ProfileD4.vue'
+import PrestasiPortal from './../views/PrestasiPortal.vue'
 import PartnershipInfo from './../views/PartnershipInfo.vue'
 import Kurikulum from './../views/Kurikulum.vue'
 import SaranaPrasarana from './../views/SaranaPrasarana.vue'
@@ -28,12 +30,17 @@ const routes: Array<RouteConfig> = [
     component: Agenda,
   },
   {
+    path: "/berita",
+    name: "Berita JTK Polban",
+    component: BeritaPortal,
+  },
+  {
     path: "/partnership-submission",
     name: "Partnership",
     component: PartnershipSubmission,
   },
   {
-    path: "/gallery-detail",
+    path: "/gallery-detail/:id",
     name: "Gallery Detail",
     component: GalleryDetail,
   },
@@ -51,6 +58,11 @@ const routes: Array<RouteConfig> = [
     path: "/profile-d4",
     name: "Profile D4 Teknik Informatika",
     component: ProfileD4,
+  },
+  {
+    path: "/prestasi",
+    name: "Prestasi JTK Polban",
+    component: PrestasiPortal,
   },
   {
     path: "/partnership-info",

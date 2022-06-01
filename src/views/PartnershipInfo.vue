@@ -20,7 +20,7 @@
             <PartnerList></PartnerList>
         </div>
 
-        <div class="">
+        <div class="btn-ajukan-kerjasama center-button">
             <v-btn
                 @click="$router.push('/partnership-submission')"
                 dark
@@ -29,6 +29,8 @@
             >Ajukan Kerja Sama</v-btn>
         </div>
     </div>
+     
+
     <Footer></Footer>
   </div>
 </template>
@@ -86,7 +88,8 @@ export default {
 }
 
 .btn-ajukan-kerjasama{ 
- 
+ margin-top: 5%;
+ display: absolute;
 }
 
 #image-partnership-info{ 

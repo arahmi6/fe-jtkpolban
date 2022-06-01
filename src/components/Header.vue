@@ -1,8 +1,7 @@
 <template>
   <div class="header-panel">
       <v-toolbar flat height="100">
-      <v-col></v-col>
-      <v-toolbar-side-icon>
+      <v-toolbar-side-icon class="pl-16">
         <v-img
           @click="$router.push('/')"
           v-bind:src="require('@/assets/polban.png')"
@@ -96,7 +95,7 @@
       </v-toolbar-items>
       <v-col></v-col>
       <v-col></v-col>
-      <v-text-field
+      <!-- <v-text-field
         flat
         class="rounded-0 mt-4"
         solo
@@ -104,7 +103,7 @@
         placeholder="Cari..."
         append-icon="mdi-magnify"
         background-color="#19396C"
-      ></v-text-field>
+      ></v-text-field> -->
       
       <v-col></v-col>
     </v-toolbar>
