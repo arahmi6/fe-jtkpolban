@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import LandingPage from "../views/LandingPage.vue";
 import Agenda from './../views/Agenda.vue'
+import BeritaPortal from './../views/BeritaPortal.vue'
 import PartnershipSubmission from './../views/PartnershipSubmission.vue'
 import GalleryDetail from './../views/GalleryDetail.vue'
 import ProfileJurusan from './../views/ProfileJurusan.vue'
@@ -26,6 +27,11 @@ const routes: Array<RouteConfig> = [
     path: "/agenda",
     name: "Agenda JTK Polban",
     component: Agenda,
+  },
+  {
+    path: "/berita",
+    name: "Berita JTK Polban",
+    component: BeritaPortal,
   },
   {
     path: "/partnership-submission",
