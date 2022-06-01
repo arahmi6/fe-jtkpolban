@@ -66,10 +66,10 @@
                   <strong>Kontak</strong>
                 </v-row>
                 <v-row>
-                  <p>Jurusan Teknik Komputer dan Informatika Politeknik Negeri Bandung</p>
+                  <p>Jurusan Teknik Komputer<br>dan Informatika<br>Politeknik Negeri Bandung</p>
                 </v-row>
                 <v-row>
-                  <p>Jl. Gegerkalong Hilir, Ds. Ciwaruga, Bandung 40559, Jawa Barat Telp. (022) 2013789 ext. 301</p>
+                  <p>Jl. Gegerkalong Hilir,<br>Ds. Ciwaruga,<br>Bandung 40559,<br>Jawa Barat<br>Telp. (022) 2013789 ext. 301</p>
                 </v-row>
               </v-col>
               <v-col>
