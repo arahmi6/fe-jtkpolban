@@ -4,7 +4,7 @@
     class="py-7"
     >
     <v-row class="pa-0 ma-0">
-      <h2 class="pa-0 ma-0">GALLERY</h2>
+      <h2 class="pa-0 ma-0 center-panel-text ">GALLERY</h2>
     </v-row>
     <v-row class="pa-0 ma-0">
       <v-sheet
@@ -32,7 +32,7 @@
             >
               <v-row
                 class="fill-height"
-                allign="center"
+                align="center"
                 justify="center"
               >
               </v-row>
