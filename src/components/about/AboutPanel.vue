@@ -1,8 +1,8 @@
 <template>
-    <div class="expansion-panel">
+    <div class="about-panel">
         <v-row>
            <v-col cols="auto">
-               <v-card class="mt-3 ml-3" width="300">
+               <v-card class="mt-3 ml-3" width="340">
                     <v-list>
 
                     <v-list-group
@@ -12,7 +12,7 @@
                         <v-list-item-title>Profil</v-list-item-title>
                         </template>
 
-                        <v-list-item link>
+                        <v-list-item link @click="$router.push('/profile-jurusan')">
                             <v-list-item-title>Jurusan Teknik Komputer dan Informatika</v-list-item-title>
                         </v-list-item>
 
@@ -27,9 +27,10 @@
                         </template>
 
                         <v-list-item
-                            v-for="([title, icon], i) in cruds"
+                            v-for="([title, route], i) in cruds"
                             :key="i"
                             link
+                            @click="$router.push(route)"
                         >
                             <v-list-item-title v-text="title"></v-list-item-title>
 
@@ -66,18 +67,15 @@
   export default {
     data: () => ({
       cruds: [
-        ['D3 Teknik Informatika'],
-        ['D4 Teknik Informatika'],
+        ['D3 Teknik Informatika', 'profile-d3'],
+        ['D4 Teknik Informatika', 'profile-d4'],
+
       ],
     }),
   }
 </script>
 
 <style>
-* {
-  color: #19396C;
-  font-weight: bold;
-}
 
 .verticalLine {
     border-left: 8px solid #E5842D;
@@ -87,4 +85,6 @@
 .expansion-panel{
   margin: 3%;
 }
+
+
 </style>

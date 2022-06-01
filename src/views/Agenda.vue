@@ -7,17 +7,18 @@
                 
                     <v-list class="mt-3 ml-3 mr-3">
                        <v-list-item
-                            class="mt-2"
+                            class="mt-2 "
                             v-for="item in agendas"
                             :key="item"
                             link
                         >
                           <v-card class="mt-3 ml-3 mr-3" >
-                            <v-row class="mt-1 mb-1">
-                              <v-col cols="auto" id="tanggal">
+                            <v-row class="mt-1 mb-1 agenda-card">
+                              <v-col cols="auto" id="tanggal-agenda">
                                 <p>{{ item.tanggal }}</p>
                                 <p>{{ item.bulan }}</p>
                                 <p>{{ item.tahun }}</p>
+                                 <!-- <p>{{ item.Date }}</p> -->
                               </v-col>
 
                               <v-col cols="auto">
@@ -25,18 +26,18 @@
                               </v-col>
                                 
                               <v-col >
-                                <p id="nama-acara">{{ item.nama_agenda }}</p>
+                                <p id="nama-acara">{{ item.Name }}</p>
                                 
                                 <v-row>
                                   <v-col cols="auto">
                                     <v-icon id="map-marker">mdi-map-marker</v-icon>
                                   </v-col>
                                   <v-col>
-                                    <p id="nama-lokasi">{{ item.lokasi }}</p>
+                                    <p id="nama-lokasi">{{ item.Location }}</p>
                                   </v-col>
                                 </v-row>
                                 
-                                <p>{{ item.deskripsi }}</p>
+                                <p >{{ item.Description }}</p>
                               </v-col>
 
                             </v-row>
@@ -56,6 +57,7 @@
 /* eslint-disable */
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import http from "./../http.js";
 
 export default {
   name: 'App',
@@ -64,39 +66,25 @@ export default {
     Footer
   },
   data: () => ({
-  
-      agendas: [
-        {nama_agenda: "Agenda 1",
-         tanggal : "10",
-         bulan : "APR",
-         tahun : "2022",
-         lokasi : "Politeknik Negeri Bandung",
-         deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
-        },
-        {nama_agenda: "Agenda 2",
-         tanggal : "10",
-         bulan : "APR",
-         tahun : "2022",
-         lokasi : "Politeknik Negeri Bandung",
-         deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
-        },
-        {nama_agenda: "Agenda 3",
-         tanggal : "10",
-         bulan : "APR",
-         tahun : "2022",
-         lokasi : "Politeknik Negeri Bandung",
-         deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
-        },
-        {nama_agenda: "Agenda 4",
-         tanggal : "10",
-         bulan : "APR",
-         tahun : "2022",
-         lokasi : "Politeknik Negeri Bandung",
-         deskripsi : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci vulputate luctus imperdiet proin tristique sagittis, elementum. Sit platea purus elementum in eu sed volutpat. Nunc massa aliquam at quam egestas nam. Sem eget eget accumsan dictum dui. Sit commodo, non quam elementum, sit suspendisse euismod ante mi. Volutpat pellentesque tempor, lectus auctor id et. Morbi mi risus, et a. Eget nibh blandit erat magna eget sagittis." 
-        },
-      ],
+      months: ['JAN', 'FEB', 'MAR', 'APR', 'MEI', 'JUN', 'JUL', 'AGS', 'SEP', 'OKT', 'NOV', "DES"],
+      agendas: [],
     }),
-  
+
+  mounted() {
+    // console.log("MASUK");
+    const url = "/agendas" ;
+    http.get(url).then(response => {
+      this.agendas = response.data;
+      for(let i=0; i<this.agendas.length; i++){
+        console.log("MASUK");
+        let tanggal_str = this.agendas[i].Date;
+        this.agendas[i].tanggal = tanggal_str.substring(8);
+        this.agendas[i].bulan = this.months[tanggal_str.substring(6,7)];   
+        this.agendas[i].tahun = tanggal_str.substring(0,4);   
+      }
+    });
+    
+  }
 }
 </script>
 
@@ -122,9 +110,9 @@ h1{
     height: 100%;
 }
 
-#tanggal{
+#tanggal-agenda{
   font-size: 230%;
-  font-weight: bold;
+  font-weight: 4000;
   color: #E5842D;
   text-align: center;
   padding-left: 3%;
@@ -144,5 +132,10 @@ h1{
 
 #map-marker{
   color: #FF3D00;
+}
+
+.agenda-card{ 
+  padding-left: 2%;
+  padding-right: 4%;
 }
 </style>

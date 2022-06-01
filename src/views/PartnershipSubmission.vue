@@ -1,7 +1,7 @@
 <template>
   <div id="agenda">
     <Header></Header>
-    <h2>FORMULIR PENGAJUAN KERJASAMA</h2>
+    <h2 id="judul-formulir">FORMULIR PENGAJUAN KERJASAMA</h2>
     <div class="partnership-submission">
         <v-container fluid >
           <v-row>
@@ -17,20 +17,22 @@
                 class="rounded-0 ml-4"
                 label="Mitra Kerja Sama"
                 solo
+                v-model="PartnerName"
               ></v-text-field>
             </v-col>
           </v-row>
 
            <v-row>
             <v-col cols="4">
-              <p
+              <p class="font-weight-bold"
               >Data PIC Mitra</p>
             </v-col>
           </v-row>
 
            <v-row>
             <v-col cols="4">
-              <p>Nama</p>
+              <p class="sub-data-pic"
+              >Nama</p>
             </v-col>
             <v-col
               cols="12"
@@ -41,13 +43,15 @@
                 class="rounded-0 ml-4"
                 label="Nama"
                 solo
+                v-model="PIC_Name"
               ></v-text-field>
             </v-col>
           </v-row>
 
            <v-row>
             <v-col cols="4">
-              <p>Nomor Telepon</p>
+              <p class="sub-data-pic"
+              >Nomor Telepon</p>
             </v-col>
             <v-col
               cols="12"
@@ -58,13 +62,15 @@
                 class="rounded-0 ml-4"
                 label="Nomor telepon"
                 solo
+                v-model="PIC_PhoneNumber"
               ></v-text-field>
             </v-col>
           </v-row>
 
            <v-row>
             <v-col cols="4">
-              <p>Email</p>
+              <p class="sub-data-pic"
+              >Email</p>
             </v-col>
             <v-col
               cols="12"
@@ -75,6 +81,7 @@
                 class="rounded-0 ml-4"
                 label="Email"
                 solo
+                v-model="PIC_Email"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -82,7 +89,8 @@
 
            <v-row>
             <v-col cols="4">
-              <p>Lingkup Kerja Sama</p>
+              <p class="sub-data-pic"
+              >Lingkup Kerja Sama</p>
             </v-col>
             <v-col
               cols="12"
@@ -94,13 +102,15 @@
                 solo
                 name="input-7-4"
                 label="Lingkup kerjasama antara mitra dengan JTK"
+                v-model="ScopeofCoorperation"
               ></v-textarea>
             </v-col>
           </v-row>
 
            <v-row>
             <v-col cols="4">
-              <p>Rencana Kegiatan</p>
+              <p class="sub-data-pic"
+              >Rencana Kegiatan</p>
             </v-col>
             <v-col
               cols="12"
@@ -112,13 +122,15 @@
                 solo
                 name="input-7-4"
                 label="Rencana kegiatan kerjasama antara mitra dengan JTK"
+                v-model="Plan"
               ></v-textarea>
             </v-col>
           </v-row>
 
            <v-row>
             <v-col cols="4">
-              <p>Surat Permohonan Kerjsama</p>
+              <p class="sub-data-pic"
+              >Surat Permohonan Kerjsama</p>
             </v-col>
             <v-col
               cols="12"
@@ -130,6 +142,7 @@
                   label="Upload file permohonan kerja sama"
                   outlined
                   dense
+                  v-model="FileSubmission"
                 ></v-file-input>
             </v-col>
           </v-row>
@@ -142,7 +155,7 @@
               <v-btn
                 @click = submitAction
                 dark
-                class="rounded-0 ml-4"
+                class="rounded-0 ml-4 btn-kirim"
                 color="#19396C"
               >Kirim</v-btn>
         </v-col>
@@ -158,6 +171,7 @@
 /* eslint-disable */
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import http from "./../http.js";
 
 export default {
   name: 'App',
@@ -166,13 +180,52 @@ export default {
     Footer
   },
   data: () => ({
+    dialog: false,
+    PartnerName: "" ,
+    PIC_Name: "" ,
+    PIC_PhoneNumber: "" ,
+    PIC_Email: "" ,
+    ScopeOfCoorperation: "" ,
+    Plan: "" ,
+    FileSubmission,
   }),
   methods: {
     submitAction(){
+      alert("halo");
+      alert(this.PIC_Name)
+      let formData = {
+        PartnerName: this.PartnerName ,
+        PIC_Name: this.PIC_Name,
+        PIC_PhoneNumber: this.PIC_PhoneNumber ,
+        PIC_Email: this.PIC_Email,
+        ScopeOfCoorperation: this.ScopeOfCoorperation,
+        Plan: this.Plan,
+        FileSubmission: this.FileSubmission,
+      };
+      const jsonData = JSON.stringify(formData);
+      alert("halo 2");
+      const url = "/partner-submissions";
+      http
+        .post(url, formData)
+        .then((response) => {
+          alert("halo 3");
+        })
+        .catch((error) => {
+          alert("Failed \n" + error);
+        });
+      
+      this.PartnerName= "" ;
+      this.PIC_Name= "" ;
+      this.PIC_PhoneNumber= "" ;
+      this.PIC_Email= "" ;
+      this.ScopeOfCoorperation= "" ;
+      this.Plan= "" ;
+      
+    }
 
     }
   }
-}
+
 </script>
 
 <style>
@@ -181,7 +234,7 @@ export default {
   padding: 0;
 }
 
-h2{
+#judul-formulir{
     text-align: center;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -191,6 +244,11 @@ h2{
   margin-top: 4%;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.sub-data-pic{ 
+  margin-left: 15%;
+  font-weight: 400;
 }
 
 </style>

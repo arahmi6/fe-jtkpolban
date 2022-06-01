@@ -2,8 +2,9 @@
   <div>
     <v-card
       flat
+      link
       class="rounded-0 mx-auto"
-      max-width="290"
+      max-width="280"
     >
       <v-img
         max-height="180"

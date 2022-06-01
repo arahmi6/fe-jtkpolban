@@ -11,6 +11,9 @@
     <v-row class="ma-0">
       <Prestasi></Prestasi>
     </v-row>
+    <v-row>
+      <Gallery></Gallery>
+    </v-row>
     <Footer></Footer>
   </div>
 </template>
@@ -21,6 +24,7 @@ import Banner from './../components/Banner.vue'
 import Berita from './../components/beranda/BeritaPanel.vue'
 import Agenda from './../components/beranda/AgendaPanel.vue'
 import Prestasi from './../components/beranda/PrestasiPanel.vue'
+import Gallery from '../components/beranda/GalleryPanel.vue'
 import Footer from './../components/Footer.vue'
 
 export default {
@@ -31,6 +35,7 @@ export default {
     Berita,
     Agenda,
     Prestasi,
+    Gallery,
     Footer
   }
 }

@@ -2,6 +2,7 @@
   <div>
     <v-card
       flat
+      link
       class="rounded-0 mx-auto"
       max-width="190"
     >
