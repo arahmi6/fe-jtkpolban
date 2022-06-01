@@ -1,8 +1,7 @@
 <template>
   <div class="header-panel">
       <v-toolbar flat height="100">
-      <v-col></v-col>
-      <v-toolbar-side-icon>
+      <v-toolbar-side-icon class="pl-16">
         <v-img
           @click="$router.push('/')"
           v-bind:src="require('@/assets/polban.png')"
