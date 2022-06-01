@@ -38,7 +38,11 @@
     <v-row class="ma-0 pa-0">
       <v-card-action>
         <div class="center-button">
-          <v-btn outlined class="more-btn rounded-0">
+          <v-btn 
+            outlined 
+            class="more-btn rounded-0"
+            link @click="$router.push('/galeri')"
+          >
             Lihat selengkapnya
           </v-btn>
         </div>

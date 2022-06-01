@@ -28,7 +28,11 @@
     <v-row class="ma-0">
       <v-card-action>
         <div class="center-button">
-          <v-btn outlined class="more-btn rounded-0">
+          <v-btn 
+            outlined 
+            class="more-btn rounded-0"
+            link @click="$router.push('/prestasi')"
+          >
             Lihat selengkapnya
           </v-btn>
         </div>

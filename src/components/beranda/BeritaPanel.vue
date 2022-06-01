@@ -8,7 +8,7 @@
         </v-col>
         <v-col>
           <a
-            href="#"
+            link @click="$router.push('/berita')"
             class="text-decoration-underline"
           >Lihat semua</a>
         </v-col>
