@@ -18,25 +18,19 @@
           show-arrows
         >
           <v-slide-item
-            v-for="n in 15"
+            v-for="n in 12"
             :key="n"
             v-slot="{ active, toggle }"
           >
-            <v-card
-              :color="active ? undefined : 'grey lighten-1'"
-              class="ma-4 rounded-0"
-              flat
-              height="250"
-              width="400"
+            <v-img
+              :color="active"
+              class="ma-4 pa-0"
+              max-height="250"
+              max-width="400"
+              v-bind:src="`${albums[1].Medias[n].image}`"
               @click="toggle"
             >
-              <v-row
-                class="fill-height"
-                align="center"
-                justify="center"
-              >
-              </v-row>
-            </v-card>
+            </v-img>
           </v-slide-item>
         </v-slide-group>
       </v-sheet>
@@ -52,6 +46,34 @@
     </v-row>
   </v-card>
 </template>
+
+<script>
+import http from "./../../http.js";
+
+export default {
+  name: 'App',
+  components: {
+    
+  },
+  data: () => ({
+    albums: [],
+  }),
+
+  mounted() {
+    const url = "/albums" ;
+    http.get(url).then(response => {
+      this.albums = response.data;
+      for(let i=0; i<this.albums[1].Medias.length; i++){
+        console.log("MASUK");
+        let link = process.env.VUE_APP_CMS_API;
+        link = link.slice(0, -1);
+        this.albums[1].Medias[i].image = link.concat(this.albums[1].Medias[i].url);
+      }
+    });
+  }
+}
+</script>
+
 
 <style>
 .center-button {

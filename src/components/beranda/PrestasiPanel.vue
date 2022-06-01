@@ -15,7 +15,7 @@
           max-width="280"
         >
           <v-img
-            max-height="180"
+            max-height="160"
             v-bind:src="`${achievements[item].image}`"
           ></v-img>
           <v-card-text class="px-0">
