@@ -14,7 +14,7 @@
                         >
                           <v-card class="mt-3 ml-3 mr-3" >
                             <v-row class="mt-1 mb-1 agenda-card">
-                              <v-col cols="auto" id="tanggal">
+                              <v-col cols="auto" id="tanggal-agenda">
                                 <p>{{ item.tanggal }}</p>
                                 <p>{{ item.bulan }}</p>
                                 <p>{{ item.tahun }}</p>
@@ -110,7 +110,7 @@ h1{
     height: 100%;
 }
 
-#tanggal{
+#tanggal-agenda{
   font-size: 230%;
   font-weight: 4000;
   color: #E5842D;

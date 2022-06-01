@@ -65,9 +65,4 @@ h1{
   font-weight: bolder;
 }
 
-p{
-  font-weight: lighter;
-  text-align: justify;
-}
-
 </style>

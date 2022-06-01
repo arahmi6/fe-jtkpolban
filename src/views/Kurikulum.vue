@@ -13,7 +13,7 @@
           <p id="tanggal">{{tanggal}}</p>
 
           <v-container >
-            <p >   
+            <p>   
               Struktur Mata Kuliah per Semester
             </p>
             <pdf src="./static/Kurikulum.pdf"></pdf>
@@ -66,11 +66,6 @@ h1{
 
 #tanggal{ 
   font-weight: bolder;
-}
-
-p{
-  font-weight: lighter;
-  text-align: justify;
 }
 
 </style>

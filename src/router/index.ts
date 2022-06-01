@@ -7,7 +7,7 @@ import GalleryDetail from './../views/GalleryDetail.vue'
 import ProfileJurusan from './../views/ProfileJurusan.vue'
 import ProfileD3 from './../views/ProfileD3.vue'
 import ProfileD4 from './../views/ProfileD4.vue'
-import InfoKerjaSama from './../views/InfoKerjaSama.vue'
+import PartnershipInfo from './../views/PartnershipInfo.vue'
 import Kurikulum from './../views/Kurikulum.vue'
 import SaranaPrasarana from './../views/SaranaPrasarana.vue'
 Vue.use(VueRouter);
@@ -49,9 +49,9 @@ const routes: Array<RouteConfig> = [
     component: ProfileD4,
   },
   {
-    path: "/infokerjasama",
-    name: "Info Kerja Sama",
-    component: InfoKerjaSama,
+    path: "/partnerhip-info",
+    name: "Partnership Info",
+    component: PartnershipInfo,
   },
   {
     path: "/kurikulum",
