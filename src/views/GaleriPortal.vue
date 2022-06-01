@@ -25,6 +25,9 @@
                 <div>
                     <v-img v-bind:src="require('@/assets/prestasi-1.jpg')" height="100%" id="class"></v-img>
                 </div>
+                <div>
+                    <v-img v-bind:src="require('@/assets/berita-1.jpg')" height="100%" id="berita"></v-img>
+                </div>
             </div>
 
         </div>
