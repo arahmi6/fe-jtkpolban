@@ -10,6 +10,9 @@ import ProfileD4 from './../views/ProfileD4.vue'
 import PartnershipInfo from './../views/PartnershipInfo.vue'
 import Kurikulum from './../views/Kurikulum.vue'
 import SaranaPrasarana from './../views/SaranaPrasarana.vue'
+import BeritaDetail from './../views/BeritaDetail.vue'
+import PrestasiDetail from './../views/PrestasiDetail.vue'
+import Galeri from './../views/GaleriPortal.vue'
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -63,6 +66,21 @@ const routes: Array<RouteConfig> = [
     name: "Sarana dan Prasarana",
     component: SaranaPrasarana,
   },
+  {
+    path: "/berita-detail",
+    name: "Detail Berita",
+    component: BeritaDetail,
+  },
+  {
+    path: "/prestasi-detail",
+    name: "Detail Prestasi",
+    component: PrestasiDetail,
+  },
+  {
+    path: "/galeri",
+    name: "Galeri",
+    component: Galeri,
+  }
 ];
 
 const router = new VueRouter({
