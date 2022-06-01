@@ -1,4 +1,4 @@
-  <template>
+<template>
   <div id="footer">
     <v-footer
       dark
@@ -141,18 +141,18 @@
 export default {
   data: () => ({
     icons: [
-      'mdi-facebook',
-      'mdi-instagram',
-      'mdi-twitter',
-      'mdi-youtube',
-      'mdi-linkedin',
-    ]
+      "mdi-facebook",
+      "mdi-instagram",
+      "mdi-twitter",
+      "mdi-youtube",
+      "mdi-linkedin",
+    ],
   }),
 };
 </script>
 
 <style>
-#footer{ 
+#footer {
   margin-top: 4%;
 }
 
